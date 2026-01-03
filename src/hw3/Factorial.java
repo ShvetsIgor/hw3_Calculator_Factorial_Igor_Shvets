@@ -24,7 +24,7 @@ public class Factorial {
             return -1;
         int res = 1;
         for (int i = 1; i <= num; i++) {    //  1       2       3       4
-            res = res * i;                  // 1*1=1; 1*2=2; 2*3=6; 6*4=24
+            res *= i;                  // 1*1=1; 1*2=2; 2*3=6; 6*4=24
         }
         return res;
     }
