@@ -6,13 +6,20 @@ public class Factorial {
     public static void main(String[] args) {
 
         int num = Integer.parseInt(args[0]);
-        if (num > 12) {
-            System.out.println("Factorial of " + num + " is too big, so we use BigInteger");
-            System.out.println("Result: " + factorialBigInt(num));
+//        if (num > 12) {
+//            System.out.println("Factorial of " + num + " is too big, so we use BigInteger");
+//            System.out.println("Result: " + factorialBigInt(num));
+//        }
+//        else {
+//            System.out.println("Factorial of " + num + " is in Integer range");
+//            System.out.println("Result: " + factorialInt(num));
+//        }
+
+        if (factorialInt(num) != -1) {
+            System.out.println("Result: (int) " + factorialInt(num));
         }
         else {
-            System.out.println("Factorial of " + num + " is in Integer range");
-            System.out.println("Result: " + factorialInt(num));
+            System.out.println("Result: (BigInt) " + factorialBigInt(num));
         }
 
     }
@@ -23,8 +30,10 @@ public class Factorial {
         if (num < 0)
             return -1;
         int res = 1;
-        for (int i = 1; i <= num; i++) {    //  1       2       3       4
-            res *= i;                  // 1*1=1; 1*2=2; 2*3=6; 6*4=24
+        for (int i = 1; i <= num; i++) {
+            if (res > Integer.MAX_VALUE / i)
+                return -1;
+            res *= i;
         }
         return res;
     }
