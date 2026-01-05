@@ -22,6 +22,9 @@ public class Factorial {
             System.out.println("Result: (BigInt) " + factorialBigInt(num));
         }
 
+//        System.out.println(factorialInt(num));
+//        System.out.println(factorialBigInt(num));
+
     }
 
     public static int factorialInt(int num) {
